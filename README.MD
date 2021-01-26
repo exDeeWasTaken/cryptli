@@ -1,4 +1,4 @@
-#Building
+# Building
 ## Build raw wasm
 ### Run
 `cargo build --release --target wasm32-unknown-unknown`<br>
