@@ -1,7 +1,3 @@
-cargo build --release --target wasm32-unknown-unknown
-<br>
-wasm-bindgen --target deno --out-dir ./wasm ./target/wasm32-unknown-unknown/release/cryptli.wasm
-<br>
 #Building
 ## Build raw wasm
 ### Run
