@@ -1,1 +1,3 @@
-export {cesar} from "./wasm/cryptli.js";
+import {cesar} from "./wasm/cryptli.js";
+
+console.log(cesar("aac", 5))
