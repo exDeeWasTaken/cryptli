@@ -3,7 +3,7 @@ const assert = require('assert');
 
 
 
-describe("Cesar Tests", function() {
+describe("Cesar", function() {
     it("Encrypt", function() {
         assert.equal(cesar("aAzZ!.?`", 50), "yYxX!.?`");
     });
