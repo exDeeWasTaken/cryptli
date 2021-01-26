@@ -6,17 +6,7 @@ Deno.test("Cesar encode mixed", () => {
     assertEquals(cipher, "yYxX!.?`");
 });
 
-Deno.test("Cesar encode lower", () => {
-   const cipher = cesar("z", 1);
-   assertEquals(cipher, "a");
-});
-
-Deno.test("Cesar decode upper", () => {
-    const cipher = cesar("C", -1);
-    assertEquals(cipher, "B");
-});
-
-Deno.test("Cesar decode lower", () => {
-    const cipher = cesar("z", -1);
-    assertEquals(cipher, "y");
+Deno.test("Cesar decode mixed", () => {
+    const cipher = cesar("yYxX!.?`", -50);
+    assertEquals(cipher, "aAzZ!.?`");
 });
