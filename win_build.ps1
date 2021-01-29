@@ -12,6 +12,7 @@ Invoke-Expression $build_deno_glue_code;
 $build_node_glue_code = "wasm-bindgen --target nodejs --out-dir ./node/wasm ./target/wasm32-unknown-unknown/release/cryptli.wasm";
 Invoke-Expression $build_node_glue_code;
 
+
 ## Change filepath in denos cryptli_js to match with the wasm-directory
 $path_to_deno_crytli_js = "./deno/wasm/cryptli.js";
 $deno_crypli_js = Get-Content -Path $path_to_deno_crytli_js;
