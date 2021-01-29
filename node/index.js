@@ -1,3 +1,4 @@
 const wasm = require("./wasm/cryptli.js");
-const cesar = wasm.cesar;
-exports.cesar = cesar;
+exports.cesar = wasm.cesar;
+exports.binary_encrypt = wasm.binary_encrypt;
+exports.binary_decrypt = wasm.binary_decrypt;

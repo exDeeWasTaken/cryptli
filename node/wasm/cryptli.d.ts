@@ -11,3 +11,8 @@ export function cesar(str: string, shift_amount: number): string;
 * @returns {string}
 */
 export function binary_encrypt(str: string): string;
+/**
+* @param {string} str
+* @returns {string}
+*/
+export function binary_decrypt(str: string): string;
