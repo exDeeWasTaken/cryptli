@@ -1,8 +1,10 @@
-﻿$ErrorActionPreference = "Stop"
-$commit_message = $args[0];
-if ($commit_message -eq "") {
-    Exit;
-}
+﻿ Param
+ (
+ [parameter(Mandatory=$true)]
+ [ValidateNotNull()]
+ $commit_message
+ )
+
 git add *;
-git commit -m '"' + $commit_message + '"';
+git commit -m $commit_message;
 git push;
