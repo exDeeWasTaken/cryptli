@@ -4,7 +4,7 @@
 ### On Windows
 * open powershell
 * in powershell: `cd path/to/this/repo`
-* in powershell: `./win_build.ps1`
+* in powershell: `./build.ps1`
 ### On Linux
 * Not in need yet
 
@@ -12,7 +12,16 @@
 ### On Windows
 * open powershell
 * in powershell: `cd path/to/this/repo`
-* in powershell: `./win_test.ps1`
+* in powershell: `./test.ps1`
+
+### On Linux
+* Not in need yet
+
+## Push to git
+### On Windows
+* open powershell
+* in powershell: `cd path/to/this/repo`
+* in powershell: `./git.ps1`
 
 ### On Linux
 * Not in need yet
