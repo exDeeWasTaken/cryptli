@@ -1,2 +1,1 @@
-export {cesar, binary_encrypt, binary_decrypt} from "./wasm/cryptli.js";
-import {binary_decrypt} from "./wasm/cryptli.js";
+export {cesar, binary_encrypt, binary_decrypt, numeral_encode} from "./wasm/cryptli.js";
