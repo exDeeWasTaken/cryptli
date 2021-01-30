@@ -15,7 +15,7 @@ export function binary_decrypt(str: string): string;
 * @param {number} radix
 * @returns {string}
 */
-export function numeral_encode(str: string, radix: number): string;
+export function numeral_encrypt(str: string, radix: number): string;
 /**
 * @param {string} str
 * @param {number} shift_amount

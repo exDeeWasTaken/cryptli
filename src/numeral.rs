@@ -2,7 +2,7 @@ pub mod numeral {
     use wasm_bindgen::prelude::*;
 
     #[wasm_bindgen]
-    pub fn numeral_encode(str: &str, radix: u32) -> String {
+    pub fn numeral_encrypt(str: &str, radix: u32) -> String {
         let nums =
             ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
                 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -10,6 +10,10 @@ pub mod numeral {
         let mut cipher = String::new();
         if radix > nums.len() as u32 {
             return "Error: Radix bigger than 36".into();
+        }
+
+        if radix < 2  {
+            return "Error: Radix smaller than 2".into();
         }
 
         let mut char_in_other_radix: Vec<String> = vec![];

@@ -1,5 +1,5 @@
 import { assertEquals } from "https://deno.land/std@0.84.0/testing/asserts.ts";
-import {binary_decrypt, binary_encrypt, cesar, numeral_encode} from "./mod.ts";
+import {binary_decrypt, binary_encrypt, cesar, numeral_encrypt} from "./mod.ts";
 
 Deno.test("Cesar encode", () => {
     const cipher = cesar("aAzZ!.?`", 50);
@@ -22,6 +22,6 @@ Deno.test("Binary decode", () => {
 });
 
 Deno.test("Numeral encode", () => {
-    const cipher = numeral_encode("I <3 cryptli!", 36);
+    const cipher = numeral_encrypt("I <3 cryptli!", 36);
     assertEquals(cipher, "21 w 1o 1f w 2r 36 3d 34 38 30 2x x");
 });
