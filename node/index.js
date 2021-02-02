@@ -4,3 +4,5 @@ exports.binary_encrypt = wasm.binary_encrypt;
 exports.binary_decrypt = wasm.binary_decrypt;
 exports.numeral_encrypt = wasm.numeral_encrypt;
 exports.numeral_decrypt = wasm.numeral_decrypt;
+exports.ascii_encrypt = wasm.ascii_encrypt;
+exports.ascii_decrypt = wasm.ascii_decrypt;

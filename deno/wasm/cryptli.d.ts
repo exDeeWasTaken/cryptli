@@ -24,6 +24,16 @@ export function binary_encrypt(str: string): string;
 export function binary_decrypt(str: string): string;
 /**
 * @param {string} str
+* @returns {string}
+*/
+export function ascii_encrypt(str: string): string;
+/**
+* @param {string} str
+* @returns {string}
+*/
+export function ascii_decrypt(str: string): string;
+/**
+* @param {string} str
 * @param {number} shift_amount
 * @returns {string}
 */

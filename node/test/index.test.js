@@ -1,4 +1,12 @@
-const {cesar, binary_encrypt, binary_decrypt, numeral_encrypt, numeral_decrypt} = require("../index.js");
+const {
+    cesar,
+    binary_encrypt,
+    binary_decrypt,
+    numeral_encrypt,
+    numeral_decrypt,
+    ascii_encrypt,
+    ascii_decrypt
+} = require("../index.js");
 const assert = require('assert');
 
 
@@ -26,5 +34,14 @@ describe("Numeral", function () {
     });
     it("Decrypt", function () {
         assert.equal(numeral_decrypt("21 w 1o 1f w 2r 36 3d 34 38 30 2x x", 36), "I <3 cryptli!");
+    });
+});
+
+describe("Ascii", function () {
+    it("Encrypt", function () {
+        assert.equal(ascii_encrypt("I <3 cryptli!"), "73 32 60 51 32 99 114 121 112 116 108 105 33");
+    });
+    it("Decrypt", function () {
+        assert.equal(ascii_decrypt("73 32 60 51 32 99 114 121 112 116 108 105 33"), "I <3 cryptli!");
     });
 });

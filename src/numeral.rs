@@ -75,7 +75,7 @@ pub mod numeral {
 
             if let Some(chari) = new_char {
                 cipher.push(chari)
-            }else{
+            } else {
                 return "Something went wrong".into();
             }
         }
