@@ -5,7 +5,9 @@ const {
     numeral_encrypt,
     numeral_decrypt,
     ascii_encrypt,
-    ascii_decrypt
+    ascii_decrypt,
+    morse_encrypt,
+    morse_decrypt
 } = require("../index.js");
 const assert = require('assert');
 
@@ -43,5 +45,14 @@ describe("Ascii", function () {
     });
     it("Decrypt", function () {
         assert.equal(ascii_decrypt("73 32 60 51 32 99 114 121 112 116 108 105 33"), "I <3 cryptli!");
+    });
+});
+
+describe("Morse", function () {
+    it("Encrypt", function () {
+        assert.equal(morse_encrypt("abcD"), ".- -... -.-. -..");
+    });
+    it("Decrypt", function () {
+        assert.equal(morse_decrypt(".- -... -.-. -.."), "abcd");
     });
 });

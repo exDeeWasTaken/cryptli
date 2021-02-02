@@ -6,3 +6,5 @@ exports.numeral_encrypt = wasm.numeral_encrypt;
 exports.numeral_decrypt = wasm.numeral_decrypt;
 exports.ascii_encrypt = wasm.ascii_encrypt;
 exports.ascii_decrypt = wasm.ascii_decrypt;
+exports.morse_encrypt = wasm.morse_encrypt;
+exports.morse_decrypt = wasm.morse_decrypt;

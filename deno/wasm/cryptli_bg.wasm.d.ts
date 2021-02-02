@@ -1,6 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
+export function morse_encrypt(a: number, b: number, c: number): void;
+export function morse_decrypt(a: number, b: number, c: number): void;
 export function numeral_encrypt(a: number, b: number, c: number, d: number): void;
 export function numeral_decrypt(a: number, b: number, c: number, d: number): void;
 export function binary_encrypt(a: number, b: number, c: number): void;

@@ -6,7 +6,8 @@ import {
     numeral_encrypt,
     numeral_decrypt,
     ascii_encrypt,
-    ascii_decrypt
+    ascii_decrypt,
+    morse_encrypt, morse_decrypt
 } from "./mod.ts";
 
 Deno.test("Cesar encode", () => {
@@ -47,4 +48,14 @@ Deno.test("Ascii encode", () => {
 Deno.test("Ascii decode", () => {
     const cipher = ascii_decrypt("73 32 60 51 32 99 114 121 112 116 108 105 33");
     assertEquals(cipher, "I <3 cryptli!");
+});
+
+Deno.test("Morse encode", () => {
+   const cipher = morse_encrypt("abcD");
+   assertEquals(cipher, ".- -... -.-. -..")
+});
+
+Deno.test("Morse decode", () => {
+   const cipher = morse_decrypt(".- -... -.-. -..");
+   assertEquals(cipher, "abcd");
 });

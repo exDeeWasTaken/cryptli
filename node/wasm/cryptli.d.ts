@@ -2,6 +2,16 @@
 /* eslint-disable */
 /**
 * @param {string} str
+* @returns {string}
+*/
+export function morse_encrypt(str: string): string;
+/**
+* @param {string} str
+* @returns {string}
+*/
+export function morse_decrypt(str: string): string;
+/**
+* @param {string} str
 * @param {number} radix
 * @returns {string}
 */
