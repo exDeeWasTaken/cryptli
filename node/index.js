@@ -8,3 +8,5 @@ exports.ascii_encrypt = wasm.ascii_encrypt;
 exports.ascii_decrypt = wasm.ascii_decrypt;
 exports.morse_encrypt = wasm.morse_encrypt;
 exports.morse_decrypt = wasm.morse_decrypt;
+exports.vigenere_encrypt = wasm.vigenere_encrypt;
+exports.vigenere_decrypt = wasm.vigenere_decrypt;

@@ -7,7 +7,9 @@ const {
     ascii_encrypt,
     ascii_decrypt,
     morse_encrypt,
-    morse_decrypt
+    morse_decrypt,
+    vigenere_encrypt,
+    vigenere_decrypt
 } = require("../index.js");
 const assert = require('assert');
 
@@ -54,5 +56,14 @@ describe("Morse", function () {
     });
     it("Decrypt", function () {
         assert.equal(morse_decrypt(".- -... -.-. -.."), "abcd");
+    });
+});
+
+describe("Vigenere", function () {
+    it("Encrypt", function () {
+        assert.equal(vigenere_encrypt("ILOVECRIPTLY", "KEY"), "SPMFIABMNDPW");
+    });
+    it("Decrypt",function(){
+        assert.equal(vigenere_decrypt("SPMFIABMNDPW", "KEY"), "ILOVECRIPTLY")
     });
 });

@@ -43,6 +43,18 @@ export function ascii_encrypt(str: string): string;
 */
 export function ascii_decrypt(str: string): string;
 /**
+* @param {string} plain
+* @param {string} key
+* @returns {string}
+*/
+export function vigenere_encrypt(plain: string, key: string): string;
+/**
+* @param {string} cipher
+* @param {string} key
+* @returns {string}
+*/
+export function vigenere_decrypt(cipher: string, key: string): string;
+/**
 * @param {string} str
 * @param {number} shift_amount
 * @returns {string}
