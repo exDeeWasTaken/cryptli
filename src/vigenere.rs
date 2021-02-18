@@ -10,19 +10,19 @@ pub mod vigenere {
 
         let plaintext: String = plain.into();
 
-        //Passt das keyword auf die Länge des plaintextes an
+        //fits keyword to lengh of plaintext
         let keyword: String = key.chars().cycle().take(plaintext.len()).collect();
 
-        // Chars im String nach und nach verschlüsseln
+        // Encrypt char by char
         plaintext.chars().zip(keyword.chars()).for_each(|(plaintext_char, keyword_char)| {
 
-            //Hohlt den wert vom den zwei Chars
+            //u8 value of the two chars
             let next_char = plaintext_char as u8 - 'A' as u8 + keyword_char as u8 - 'A' as u8;
 
-            //Wendet modulo an um den ort des verschlüsselten charakters im alphabet string zu finden
+            //Use modulo to get next charvalue
             let next_charnumber = next_char % 26;
 
-            //Sucht den zur Zahl zugehörigen Char
+            //Searches to next_number correspnding char
             cipher.push(alphabet.chars().nth(next_charnumber  as usize).unwrap());
         });
 
@@ -38,23 +38,23 @@ pub mod vigenere {
 
         let ciphertext: String = cipher.into();
 
-        //Passt das keyword auf die Länge des plaintextes an
+        //fits keyword to lengh of plaintext
         let keyword: String = key.chars().cycle().take(ciphertext.len()).collect();
 
-        // Wandelt den ciphertext wieder in plaintext um (Gross - Kleinschreibung nicht beachtet)
+        // Decrypts ciphertext to plaintext (only lowercase)
         ciphertext.chars().zip(keyword.chars()).for_each(|(ciphertext_char, keyword_char)| {
 
-            //Hohlt den wert vom den Chars
+            //Gets value of chars
             let keyword_number = keyword_char as u8 - 'A' as u8;
             let ciphertext_number = ciphertext_char as u8 - 'A' as u8;
             
-            //Zahl zum modulorechnen (reverse vom encrypt)
+            //get numbervalue of chars (reverse vrom encrypt)
             let next_char = ciphertext_number.to_string().parse::<i32>().unwrap() - keyword_number.to_string().parse::<i32>().unwrap();
 
-            //Wendet modulo an um den ort des nichtverschlüsselten charakters im alphabet string zu finden (Workaround weil modulo normal nicht funktioniert)
+            //Use modulo to get the location of notencrypted char (Wokaround modulo function because normal modulo doesn't work)
             let next_charnumber = ((next_char % 26) + 26) % 26;
 
-            //Sucht den zur Zahl zugehörigen Char
+            //Searches to next_charnumber correspnding char
             plain.push(alphabet.chars().nth(next_charnumber  as usize).unwrap());
             });
 
