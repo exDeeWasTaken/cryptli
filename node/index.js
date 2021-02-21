@@ -10,3 +10,5 @@ exports.morse_encrypt = wasm.morse_encrypt;
 exports.morse_decrypt = wasm.morse_decrypt;
 exports.vigenere_encrypt = wasm.vigenere_encrypt;
 exports.vigenere_decrypt = wasm.vigenere_decrypt;
+exports.atbash_encrypt = wasm.atbash_encrypt;
+exports.atbash_decrypt = wasm.atbash_encrypt;
