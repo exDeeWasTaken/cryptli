@@ -10,7 +10,9 @@ import {
     morse_encrypt, 
     morse_decrypt,
     vigenere_encrypt,
-    vigenere_decrypt
+    vigenere_decrypt,
+    atbash_encrypt,
+    atbash_decrypt
 } from "./mod.ts";
 
 Deno.test("Cesar encode", () => {
@@ -70,5 +72,15 @@ Deno.test("Vigenere encode", () => {
 
  Deno.test("Vigenere decode", () => {
     const cipher = vigenere_decrypt("SPMFIABMNDPW", "KEY");
+    assertEquals(cipher, "ILOVECRIPTLY");
+ });
+
+ Deno.test("Atbash encode", () => {
+    const cipher = atbash_encrypt("ILOVECRIPTLY");
+    assertEquals(cipher, "ROLEVXIRKGOB");
+ });
+
+ Deno.test("Atbash decode", () => {
+    const cipher = atbash_decrypt("ROLEVXIRKGOB");
     assertEquals(cipher, "ILOVECRIPTLY");
  });
