@@ -6,7 +6,9 @@
 * in powershell: `cd path/to/this/repo`
 * in powershell: `./build.ps1`
 ### On Linux
-* Not in need yet
+* open terminal
+* in terminal: `cd path/to/this/repo`
+* in terminal: `./build.sh`
 
 ## Testing
 ### On Windows
@@ -15,7 +17,9 @@
 * in powershell: `./test.ps1`
 
 ### On Linux
-* Not in need yet
+* open terminal
+* in terminal: `cd path/to/this/repo`
+* in terminal: `./test.sh`
 
 ## Push to git
 ### On Windows
@@ -24,4 +28,6 @@
 * in powershell: `./git.ps1`
 
 ### On Linux
-* Not in need yet
+* open terminal
+* in powershell: `cd path/to/this/repo`
+* in powershell: `./git.sh "<commit-message>"`
