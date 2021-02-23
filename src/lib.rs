@@ -6,6 +6,7 @@ pub mod morse;
 pub mod vigenere;
 pub mod atbash;
 pub mod latin;
+pub mod scytale;
 
 pub use cesar::*;
 pub use binary::*;
@@ -15,3 +16,4 @@ pub use morse::*;
 pub use vigenere::*;
 pub use atbash::*;
 pub use latin::*;
+pub use scytale::*;

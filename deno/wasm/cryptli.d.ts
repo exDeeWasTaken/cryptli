@@ -11,6 +11,16 @@ export function morse_encrypt(str: string): string;
 */
 export function morse_decrypt(str: string): string;
 /**
+* @param {string} plain
+* @returns {string}
+*/
+export function atbash_encrypt(plain: string): string;
+/**
+* @param {string} cipher
+* @returns {string}
+*/
+export function atbash_decrypt(cipher: string): string;
+/**
 * @param {string} str
 * @param {number} radix
 * @returns {string}
@@ -32,6 +42,18 @@ export function binary_encrypt(str: string): string;
 * @returns {string}
 */
 export function binary_decrypt(str: string): string;
+/**
+* @param {string} plain
+* @param {number} height
+* @returns {string}
+*/
+export function scytale_encrypt(plain: string, height: number): string;
+/**
+* @param {string} cipher
+* @param {number} height
+* @returns {string}
+*/
+export function scytale_decrypt(cipher: string, height: number): string;
 /**
 * @param {string} str
 * @returns {string}
@@ -68,13 +90,3 @@ export function latin_decrypt(): void;
 * @returns {string}
 */
 export function cesar(str: string, shift_amount: number): string;
-/**
-* @param {string} plain
-* @returns {string}
-*/
-export function atbash_encrypt(plain: string): string;
-/**
-* @param {string} cipher
-* @returns {string}
-*/
-export function atbash_decrypt(cipher: string): string;

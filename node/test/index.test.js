@@ -12,7 +12,9 @@ const {
     vigenere_decrypt,
     atbash_encrypt,
     atbash_decrypt,
-    latin_encrypt
+    latin_encrypt,
+    scytale_encrypt,
+    scytale_decrypt
 } = require("../index.js");
 const assert = require('assert');
 
@@ -87,4 +89,13 @@ describe("Latin", function () {
     // it("Decrypt",function(){
     //     assert.equal(atbash_decrypt("ROLEVXIRKGOB"), "ILOVECRIPTLY")
     // });
+});
+
+describe("Scytale", function () {
+    it("Encrypt", function () {
+        assert.equal(scytale_encrypt("abcdefghijklmnopqrstuvwxyzBumBumBum", 3), "adgjmpsvyuuubehknqtwzmmmcfiloruxBBB");
+    });
+    it("Decrypt", function () {
+        assert.equal(scytale_decrypt("adgjmpsvyuuubehknqtwzmmmcfiloruxBBB", 3), "abcdefghijklmnopqrstuvwxyzBumBumBum")
+    });
 });

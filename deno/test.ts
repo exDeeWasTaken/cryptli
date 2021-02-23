@@ -13,7 +13,9 @@ import {
     vigenere_decrypt,
     atbash_encrypt,
     atbash_decrypt,
-    latin_encrypt
+    latin_encrypt,
+    scytale_encrypt,
+    scytale_decrypt
 } from "./mod.ts";
 
 Deno.test("Cesar encode", () => {
@@ -89,4 +91,14 @@ Deno.test("Atbash decode", () => {
 Deno.test("Latin encode", () => {
     const cipher = latin_encrypt("I love cryptli");
     assertEquals(cipher, "9   12 15 22 5   3 18 25 16 20 12 9");
+});
+
+Deno.test("Scytale encode", () => {
+    const cipher = scytale_encrypt("abcdefghijklmnopqrstuvwxyzBumBumBum", 3);
+    assertEquals(cipher, "adgjmpsvyuuubehknqtwzmmmcfiloruxBBB");
+});
+
+Deno.test("Scytale decode", () => {
+    const cipher = scytale_decrypt("adgjmpsvyuuubehknqtwzmmmcfiloruxBBB", 3);
+    assertEquals(cipher, "abcdefghijklmnopqrstuvwxyzBumBumBum");
 });
