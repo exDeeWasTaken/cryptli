@@ -66,7 +66,7 @@ describe("Vigenere", function () {
     it("Encrypt", function () {
         assert.equal(vigenere_encrypt("ILOVECRIPTLY", "KEY"), "SPMFIABMNDPW");
     });
-    it("Decrypt",function(){
+    it("Decrypt", function () {
         assert.equal(vigenere_decrypt("SPMFIABMNDPW", "KEY"), "ILOVECRIPTLY")
     });
 });
@@ -75,7 +75,7 @@ describe("Atbash", function () {
     it("Encrypt", function () {
         assert.equal(atbash_encrypt("ILOVECRIPTLY"), "ROLEVXIRKGOB");
     });
-    it("Decrypt",function(){
+    it("Decrypt", function () {
         assert.equal(atbash_decrypt("ROLEVXIRKGOB"), "ILOVECRIPTLY")
     });
 });

@@ -29,5 +29,5 @@
 
 ### On Linux
 * open terminal
-* in powershell: `cd path/to/this/repo`
-* in powershell: `./git.sh "<commit-message>"`
+* in terminal: `cd path/to/this/repo`
+* in terminal: `./git.sh "<commit-message>"`
