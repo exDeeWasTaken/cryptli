@@ -56,6 +56,14 @@ export function vigenere_encrypt(plain: string, key: string): string;
 export function vigenere_decrypt(cipher: string, key: string): string;
 /**
 * @param {string} str
+* @returns {string}
+*/
+export function latin_encrypt(str: string): string;
+/**
+*/
+export function latin_decrypt(): void;
+/**
+* @param {string} str
 * @param {number} shift_amount
 * @returns {string}
 */

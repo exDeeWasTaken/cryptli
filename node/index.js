@@ -12,3 +12,5 @@ exports.vigenere_encrypt = wasm.vigenere_encrypt;
 exports.vigenere_decrypt = wasm.vigenere_decrypt;
 exports.atbash_encrypt = wasm.atbash_encrypt;
 exports.atbash_decrypt = wasm.atbash_encrypt;
+exports.latin_encrypt = wasm.latin_encrypt;
+

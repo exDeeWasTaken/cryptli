@@ -11,7 +11,8 @@ const {
     vigenere_encrypt,
     vigenere_decrypt,
     atbash_encrypt,
-    atbash_decrypt
+    atbash_decrypt,
+    latin_encrypt
 } = require("../index.js");
 const assert = require('assert');
 
@@ -77,4 +78,13 @@ describe("Atbash", function () {
     it("Decrypt",function(){
         assert.equal(atbash_decrypt("ROLEVXIRKGOB"), "ILOVECRIPTLY")
     });
+});
+
+describe("Latin", function () {
+    it("Encrypt", function () {
+        assert.equal(latin_encrypt("I love cryptli"), "9   12 15 22 5   3 18 25 16 20 12 9");
+    });
+    // it("Decrypt",function(){
+    //     assert.equal(atbash_decrypt("ROLEVXIRKGOB"), "ILOVECRIPTLY")
+    // });
 });

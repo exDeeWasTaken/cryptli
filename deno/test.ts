@@ -7,12 +7,13 @@ import {
     numeral_decrypt,
     ascii_encrypt,
     ascii_decrypt,
-    morse_encrypt, 
+    morse_encrypt,
     morse_decrypt,
     vigenere_encrypt,
     vigenere_decrypt,
     atbash_encrypt,
-    atbash_decrypt
+    atbash_decrypt,
+    latin_encrypt
 } from "./mod.ts";
 
 Deno.test("Cesar encode", () => {
@@ -56,31 +57,36 @@ Deno.test("Ascii decode", () => {
 });
 
 Deno.test("Morse encode", () => {
-   const cipher = morse_encrypt("abcD");
-   assertEquals(cipher, ".- -... -.-. -..")
+    const cipher = morse_encrypt("abcD");
+    assertEquals(cipher, ".- -... -.-. -..")
 });
 
 Deno.test("Morse decode", () => {
-   const cipher = morse_decrypt(".- -... -.-. -..");
-   assertEquals(cipher, "abcd");
+    const cipher = morse_decrypt(".- -... -.-. -..");
+    assertEquals(cipher, "abcd");
 });
 
 Deno.test("Vigenere encode", () => {
     const cipher = vigenere_encrypt("ILOVECRIPTLY", "KEY");
     assertEquals(cipher, "SPMFIABMNDPW");
- });
+});
 
- Deno.test("Vigenere decode", () => {
+Deno.test("Vigenere decode", () => {
     const cipher = vigenere_decrypt("SPMFIABMNDPW", "KEY");
     assertEquals(cipher, "ILOVECRIPTLY");
- });
+});
 
- Deno.test("Atbash encode", () => {
+Deno.test("Atbash encode", () => {
     const cipher = atbash_encrypt("ILOVECRIPTLY");
     assertEquals(cipher, "ROLEVXIRKGOB");
- });
+});
 
- Deno.test("Atbash decode", () => {
+Deno.test("Atbash decode", () => {
     const cipher = atbash_decrypt("ROLEVXIRKGOB");
     assertEquals(cipher, "ILOVECRIPTLY");
- });
+});
+
+Deno.test("Latin encode", () => {
+    const cipher = latin_encrypt("I love cryptli");
+    assertEquals(cipher, "9   12 15 22 5   3 18 25 16 20 12 9");
+});

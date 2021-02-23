@@ -11,6 +11,8 @@ export function ascii_encrypt(a: number, b: number, c: number): void;
 export function ascii_decrypt(a: number, b: number, c: number): void;
 export function vigenere_encrypt(a: number, b: number, c: number, d: number, e: number): void;
 export function vigenere_decrypt(a: number, b: number, c: number, d: number, e: number): void;
+export function latin_encrypt(a: number, b: number, c: number): void;
+export function latin_decrypt(): void;
 export function cesar(a: number, b: number, c: number, d: number): void;
 export function atbash_encrypt(a: number, b: number, c: number): void;
 export function atbash_decrypt(a: number, b: number, c: number): void;
