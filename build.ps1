@@ -12,5 +12,7 @@ wasm-bindgen --target nodejs --out-dir ./node/wasm ./target/wasm32-unknown-unkno
 ## Change filepath in denos cryptli_js to match with the wasm-directory
 $path_to_deno_crytli_js = "./deno/wasm/cryptli.js";
 $deno_crypli_js = Get-Content -Path $path_to_deno_crytli_js;
-$edited = $deno_crypli_js.Replace("cryptli_bg.wasm", "wasm/cryptli_bg.wasm");
+$edited = $deno_crypli_js.Replace("cryptli_bg.wasm", "filePath");
+$edited = $edited.Replace("const file = new URL(import.meta.url).pathname;", "const file = new URL(import.meta.url).pathname;
+                                                                              const filePath = Deno.build.os === 'windows' ? 'wasm/cryptli_bg.wasm' : 'cryptli_bg.wasm'")
 Set-Content -Path $path_to_deno_crytli_js -Value $edited;
