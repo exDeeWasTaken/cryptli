@@ -8,6 +8,7 @@ pub mod atbash;
 pub mod latin;
 pub mod scytale;
 pub mod rotation;
+pub mod reverse;
 
 pub use cesar::*;
 pub use binary::*;
@@ -19,3 +20,4 @@ pub use atbash::*;
 pub use latin::*;
 pub use scytale::*;
 pub use rotation::*;
+pub use reverse::*;

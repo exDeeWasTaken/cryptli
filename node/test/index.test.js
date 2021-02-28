@@ -16,7 +16,9 @@ const {
     scytale_encrypt,
     scytale_decrypt,
     rotation_encrypt,
-    rotation_decrypt
+    rotation_decrypt,
+    reverse_encrypt,
+    reverse_decrypt
 } = require("../index.js");
 const assert = require('assert');
 
@@ -108,5 +110,14 @@ describe("Rotation", function () {
     });
     it("Decrypt", function () {
         assert.equal(rotation_decrypt("VYBIRPEVCGYL", 13), "ILOVECRIPTLY")
+    });
+});
+
+describe("Reverse", function () {
+    it("Encrypt", function () {
+        assert.equal(reverse_encrypt("ILOVECRIPTLY"), "YLTPIRCEVOLI");
+    });
+    it("Decrypt", function () {
+        assert.equal(reverse_decrypt("YLTPIRCEVOLI"), "ILOVECRIPTLY")
     });
 });

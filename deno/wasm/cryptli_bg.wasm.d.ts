@@ -4,6 +4,8 @@ export const memory: WebAssembly.Memory;
 export function morse_encrypt(a: number, b: number, c: number): void;
 export function morse_decrypt(a: number, b: number, c: number): void;
 export function cesar(a: number, b: number, c: number, d: number): void;
+export function reverse_decrypt(a: number, b: number, c: number): void;
+export function reverse_encrypt(a: number, b: number, c: number): void;
 export function atbash_encrypt(a: number, b: number, c: number): void;
 export function atbash_decrypt(a: number, b: number, c: number): void;
 export function numeral_encrypt(a: number, b: number, c: number, d: number): void;

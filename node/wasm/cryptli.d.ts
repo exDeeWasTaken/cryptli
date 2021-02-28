@@ -20,6 +20,16 @@ export function cesar(str: string, shift_amount: number): string;
 * @param {string} plain
 * @returns {string}
 */
+export function reverse_encrypt(plain: string): string;
+/**
+* @param {string} cipher
+* @returns {string}
+*/
+export function reverse_decrypt(cipher: string): string;
+/**
+* @param {string} plain
+* @returns {string}
+*/
 export function atbash_encrypt(plain: string): string;
 /**
 * @param {string} cipher
