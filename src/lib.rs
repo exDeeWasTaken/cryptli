@@ -7,6 +7,7 @@ pub mod vigenere;
 pub mod atbash;
 pub mod latin;
 pub mod scytale;
+pub mod rotation;
 
 pub use cesar::*;
 pub use binary::*;
@@ -17,3 +18,4 @@ pub use vigenere::*;
 pub use atbash::*;
 pub use latin::*;
 pub use scytale::*;
+pub use rotation::*;

@@ -15,7 +15,9 @@ import {
     atbash_decrypt,
     latin_encrypt,
     scytale_encrypt,
-    scytale_decrypt
+    scytale_decrypt,
+    rotation_encrypt,
+    rotation_decrypt
 } from "./mod.ts";
 
 Deno.test("Cesar encode", () => {
@@ -101,4 +103,14 @@ Deno.test("Scytale encode", () => {
 Deno.test("Scytale decode", () => {
     const cipher = scytale_decrypt("adgjmpsvyuuubehknqtwzmmmcfiloruxBBB", 3);
     assertEquals(cipher, "abcdefghijklmnopqrstuvwxyzBumBumBum");
+});
+
+Deno.test("Rotation encode", () => {
+    const cipher = rotation_encrypt("ILOVECRIPTLY", 13);
+    assertEquals(cipher, "VYBIRPEVCGYL");
+});
+
+Deno.test("Rotation decode", () => {
+    const cipher = rotation_decrypt("VYBIRPEVCGYL", 13);
+    assertEquals(cipher, "ILOVECRIPTLY");
 });

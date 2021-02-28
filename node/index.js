@@ -15,4 +15,7 @@ exports.atbash_decrypt = wasm.atbash_encrypt;
 exports.latin_encrypt = wasm.latin_encrypt;
 exports.scytale_encrypt = wasm.scytale_encrypt;
 exports.scytale_decrypt = wasm.scytale_decrypt;
+exports.rotation_encrypt = wasm.rotation_encrypt;
+exports.rotation_decrypt = wasm.rotation_decrypt;
+
 

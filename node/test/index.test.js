@@ -14,7 +14,9 @@ const {
     atbash_decrypt,
     latin_encrypt,
     scytale_encrypt,
-    scytale_decrypt
+    scytale_decrypt,
+    rotation_encrypt,
+    rotation_decrypt
 } = require("../index.js");
 const assert = require('assert');
 
@@ -97,5 +99,14 @@ describe("Scytale", function () {
     });
     it("Decrypt", function () {
         assert.equal(scytale_decrypt("adgjmpsvyuuubehknqtwzmmmcfiloruxBBB", 3), "abcdefghijklmnopqrstuvwxyzBumBumBum")
+    });
+});
+
+describe("Rotation", function () {
+    it("Encrypt", function () {
+        assert.equal(rotation_encrypt("ILOVECRIPTLY", 13), "VYBIRPEVCGYL");
+    });
+    it("Decrypt", function () {
+        assert.equal(rotation_decrypt("VYBIRPEVCGYL", 13), "ILOVECRIPTLY")
     });
 });

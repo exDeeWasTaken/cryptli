@@ -108,6 +108,26 @@ export function morse_decrypt(str) {
 }
 
 /**
+* @param {string} str
+* @param {number} shift_amount
+* @returns {string}
+*/
+export function cesar(str, shift_amount) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        var ptr0 = passStringToWasm0(str, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.cesar(retptr, ptr0, len0, shift_amount);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        return getStringFromWasm0(r0, r1);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_free(r0, r1);
+    }
+}
+
+/**
 * @param {string} plain
 * @returns {string}
 */
@@ -214,6 +234,46 @@ export function binary_decrypt(str) {
         var ptr0 = passStringToWasm0(str, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         var len0 = WASM_VECTOR_LEN;
         wasm.binary_decrypt(retptr, ptr0, len0);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        return getStringFromWasm0(r0, r1);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_free(r0, r1);
+    }
+}
+
+/**
+* @param {string} plain
+* @param {number} key
+* @returns {string}
+*/
+export function rotation_encrypt(plain, key) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        var ptr0 = passStringToWasm0(plain, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.rotation_encrypt(retptr, ptr0, len0, key);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        return getStringFromWasm0(r0, r1);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_free(r0, r1);
+    }
+}
+
+/**
+* @param {string} cipher
+* @param {number} key
+* @returns {string}
+*/
+export function rotation_decrypt(cipher, key) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        var ptr0 = passStringToWasm0(cipher, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        var len0 = WASM_VECTOR_LEN;
+        wasm.rotation_decrypt(retptr, ptr0, len0, key);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         return getStringFromWasm0(r0, r1);
@@ -370,26 +430,6 @@ export function latin_decrypt() {
     wasm.latin_decrypt();
 }
 
-/**
-* @param {string} str
-* @param {number} shift_amount
-* @returns {string}
-*/
-export function cesar(str, shift_amount) {
-    try {
-        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        var ptr0 = passStringToWasm0(str, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        var len0 = WASM_VECTOR_LEN;
-        wasm.cesar(retptr, ptr0, len0, shift_amount);
-        var r0 = getInt32Memory0()[retptr / 4 + 0];
-        var r1 = getInt32Memory0()[retptr / 4 + 1];
-        return getStringFromWasm0(r0, r1);
-    } finally {
-        wasm.__wbindgen_add_to_stack_pointer(16);
-        wasm.__wbindgen_free(r0, r1);
-    }
-}
-
 const imports = {
     __wbindgen_placeholder__: {
     },
@@ -397,8 +437,8 @@ const imports = {
 };
 
 const file = new URL(import.meta.url).pathname;
-                                                                              const filePath = Deno.build.os === 'windows' ? 'wasm/cryptli_bg.wasm' : 'cryptli_bg.wasm'
-const wasmFile = file.substring(0, file.lastIndexOf(Deno.build.os === 'windows' ? '\\' : '/') + 1) + 'filePath';
+const filePath = Deno.build.os === 'windows' ? 'wasm/cryptli_bg.wasm' : 'cryptli_bg.wasm';
+const wasmFile = file.substring(0, file.lastIndexOf(Deno.build.os === 'windows' ? '\\' : '/') + 1) + filePath;
 const wasmModule = new WebAssembly.Module(Deno.readFileSync(wasmFile));
 const wasmInstance = new WebAssembly.Instance(wasmModule, imports);
 const wasm = wasmInstance.exports;

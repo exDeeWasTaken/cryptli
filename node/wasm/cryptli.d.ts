@@ -11,6 +11,12 @@ export function morse_encrypt(str: string): string;
 */
 export function morse_decrypt(str: string): string;
 /**
+* @param {string} str
+* @param {number} shift_amount
+* @returns {string}
+*/
+export function cesar(str: string, shift_amount: number): string;
+/**
 * @param {string} plain
 * @returns {string}
 */
@@ -42,6 +48,18 @@ export function binary_encrypt(str: string): string;
 * @returns {string}
 */
 export function binary_decrypt(str: string): string;
+/**
+* @param {string} plain
+* @param {number} key
+* @returns {string}
+*/
+export function rotation_encrypt(plain: string, key: number): string;
+/**
+* @param {string} cipher
+* @param {number} key
+* @returns {string}
+*/
+export function rotation_decrypt(cipher: string, key: number): string;
 /**
 * @param {string} plain
 * @param {number} height
@@ -84,9 +102,3 @@ export function latin_encrypt(str: string): string;
 /**
 */
 export function latin_decrypt(): void;
-/**
-* @param {string} str
-* @param {number} shift_amount
-* @returns {string}
-*/
-export function cesar(str: string, shift_amount: number): string;
