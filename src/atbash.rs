@@ -20,7 +20,7 @@ pub mod atbash {
             let next_charnumber = 25 - next_char;
 
             //Searches to next_number correspnding char
-            cipher.push(alphabet.chars().nth(next_charnumber  as usize).unwrap());
+            cipher.push(alphabet.chars().nth(next_charnumber as usize).unwrap());
         });
 
         cipher
@@ -35,8 +35,8 @@ pub mod atbash {
 
         let ciphertext: String = cipher.into();
 
-         // Encrypt char by char
-         ciphertext.chars().for_each(|ciphertext_char| {
+        // Encrypt char by char
+        ciphertext.chars().for_each(|ciphertext_char| {
 
             //u8 value of the two chars
             let next_char = ciphertext_char as u8 - 'A' as u8;
@@ -45,7 +45,7 @@ pub mod atbash {
             let next_charnumber = 25 - next_char;
 
             //Searches to next_number correspnding char
-            plain.push(alphabet.chars().nth(next_charnumber  as usize).unwrap());
+            plain.push(alphabet.chars().nth(next_charnumber as usize).unwrap());
         });
 
         plain

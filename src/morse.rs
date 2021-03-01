@@ -36,8 +36,8 @@ pub mod morse {
             if let Some(index) = opt_index {
                 let char_index = (index + 97) as u8;
                 cipher.push(char_index as char)
-            }else{
-                return "Could not decrypt morse code.".into()
+            } else {
+                return "Could not decrypt morse code.".into();
             }
         }
 
