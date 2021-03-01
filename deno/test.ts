@@ -18,8 +18,7 @@ import {
     scytale_decrypt,
     rotation_encrypt,
     rotation_decrypt,
-    reverse_encrypt,
-    reverse_decrypt
+    reverse
 } from "./mod.ts";
 
 Deno.test("Cesar encode", () => {
@@ -118,11 +117,11 @@ Deno.test("Rotation decode", () => {
 });
 
 Deno.test("Reverse encode", () => {
-    const cipher = reverse_encrypt("ILOVECRIPTLY");
+    const cipher = reverse("ILOVECRIPTLY");
     assertEquals(cipher, "YLTPIRCEVOLI");
 });
 
 Deno.test("Reverse decode", () => {
-    const cipher = reverse_decrypt("YLTPIRCEVOLI");
+    const cipher = reverse("YLTPIRCEVOLI");
     assertEquals(cipher, "ILOVECRIPTLY");
 });

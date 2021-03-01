@@ -17,8 +17,7 @@ exports.scytale_encrypt = wasm.scytale_encrypt;
 exports.scytale_decrypt = wasm.scytale_decrypt;
 exports.rotation_encrypt = wasm.rotation_encrypt;
 exports.rotation_decrypt = wasm.rotation_decrypt;
-exports.reverse_encrypt = wasm.reverse_encrypt;
-exports.reverse_decrypt = wasm.reverse_decrypt;
+exports.reverse = wasm.reverse;
 
 
 
