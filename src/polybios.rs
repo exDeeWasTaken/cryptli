@@ -51,14 +51,14 @@ pub mod polybios {
     }
 
     #[wasm_bindgen]
-    pub fn polybios_decrypt(cypher: String, key: String) -> String {
-        let polybiossquare = create_polybiossquare(key);
+    pub fn polybios_decrypt() {
+        /* let polybiossquare = create_polybiossquare(key);
 
         let mut plain = String::new();
 
         let cyphertext: String = cypher.into();
 
-        plain
+        plain */
     }
 
     //Functions for encrypt and decrypt

@@ -7,11 +7,8 @@
 */
 export function polybios_encrypt(plain: string, key: string): string;
 /**
-* @param {string} cypher
-* @param {string} key
-* @returns {string}
 */
-export function polybios_decrypt(cypher: string, key: string): string;
+export function polybios_decrypt(): void;
 /**
 * @param {string} str
 * @returns {string}
@@ -52,12 +49,7 @@ export function cesar(str: string, shift_amount: number): string;
 * @param {string} plain
 * @returns {string}
 */
-export function reverse_encrypt(plain: string): string;
-/**
-* @param {string} cipher
-* @returns {string}
-*/
-export function reverse_decrypt(cipher: string): string;
+export function reverse(plain: string): string;
 /**
 * @param {string} str
 * @returns {string}

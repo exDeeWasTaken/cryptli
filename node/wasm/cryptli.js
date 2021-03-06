@@ -103,25 +103,9 @@ module.exports.polybios_encrypt = function(plain, key) {
 };
 
 /**
-* @param {string} cypher
-* @param {string} key
-* @returns {string}
 */
-module.exports.polybios_decrypt = function(cypher, key) {
-    try {
-        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        var ptr0 = passStringToWasm0(cypher, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        var len0 = WASM_VECTOR_LEN;
-        var ptr1 = passStringToWasm0(key, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        var len1 = WASM_VECTOR_LEN;
-        wasm.polybios_decrypt(retptr, ptr0, len0, ptr1, len1);
-        var r0 = getInt32Memory0()[retptr / 4 + 0];
-        var r1 = getInt32Memory0()[retptr / 4 + 1];
-        return getStringFromWasm0(r0, r1);
-    } finally {
-        wasm.__wbindgen_add_to_stack_pointer(16);
-        wasm.__wbindgen_free(r0, r1);
-    }
+module.exports.polybios_decrypt = function() {
+    wasm.polybios_decrypt();
 };
 
 /**
@@ -255,31 +239,12 @@ module.exports.cesar = function(str, shift_amount) {
 * @param {string} plain
 * @returns {string}
 */
-module.exports.reverse_encrypt = function(plain) {
+module.exports.reverse = function(plain) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
         var ptr0 = passStringToWasm0(plain, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         var len0 = WASM_VECTOR_LEN;
-        wasm.reverse_decrypt(retptr, ptr0, len0);
-        var r0 = getInt32Memory0()[retptr / 4 + 0];
-        var r1 = getInt32Memory0()[retptr / 4 + 1];
-        return getStringFromWasm0(r0, r1);
-    } finally {
-        wasm.__wbindgen_add_to_stack_pointer(16);
-        wasm.__wbindgen_free(r0, r1);
-    }
-};
-
-/**
-* @param {string} cipher
-* @returns {string}
-*/
-module.exports.reverse_decrypt = function(cipher) {
-    try {
-        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        var ptr0 = passStringToWasm0(cipher, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        var len0 = WASM_VECTOR_LEN;
-        wasm.reverse_decrypt(retptr, ptr0, len0);
+        wasm.reverse(retptr, ptr0, len0);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         return getStringFromWasm0(r0, r1);

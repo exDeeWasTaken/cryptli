@@ -18,14 +18,9 @@ import {
     scytale_decrypt,
     rotation_encrypt,
     rotation_decrypt,
-<<<<<<< HEAD
-    reverse_encrypt,
-    reverse_decrypt,
+    reverse,
     roman_encrypt,
     roman_decrypt
-=======
-    reverse
->>>>>>> 33bbf9d802a2ab50acb3263fdfced5c37b4a01bf
 } from "./mod.ts";
 
 Deno.test("Cesar encode", () => {

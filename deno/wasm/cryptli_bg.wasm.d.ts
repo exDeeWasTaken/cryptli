@@ -2,7 +2,7 @@
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
 export function polybios_encrypt(a: number, b: number, c: number, d: number, e: number): void;
-export function polybios_decrypt(a: number, b: number, c: number, d: number, e: number): void;
+export function polybios_decrypt(): void;
 export function ascii_encrypt(a: number, b: number, c: number): void;
 export function ascii_decrypt(a: number, b: number, c: number): void;
 export function vigenere_encrypt(a: number, b: number, c: number, d: number, e: number): void;
@@ -10,8 +10,7 @@ export function vigenere_decrypt(a: number, b: number, c: number, d: number, e: 
 export function latin_encrypt(a: number, b: number, c: number): void;
 export function latin_decrypt(): void;
 export function cesar(a: number, b: number, c: number, d: number): void;
-export function reverse_decrypt(a: number, b: number, c: number): void;
-export function reverse_encrypt(a: number, b: number, c: number): void;
+export function reverse(a: number, b: number, c: number): void;
 export function morse_encrypt(a: number, b: number, c: number): void;
 export function morse_decrypt(a: number, b: number, c: number): void;
 export function numeral_encrypt(a: number, b: number, c: number, d: number): void;
