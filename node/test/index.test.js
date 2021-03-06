@@ -18,7 +18,11 @@ const {
     rotation_encrypt,
     rotation_decrypt,
     reverse_encrypt,
-    reverse_decrypt
+    reverse_decrypt,
+    roman_encrypt,
+    roman_decrypt,
+    polybios_encrypt,
+    polybios_decrypt
 } = require("../index.js");
 const assert = require('assert');
 
@@ -73,7 +77,7 @@ describe("Vigenere", function () {
         assert.equal(vigenere_encrypt("ILOVECRIPTLY", "KEY"), "SPMFIABMNDPW");
     });
     it("Decrypt", function () {
-        assert.equal(vigenere_decrypt("SPMFIABMNDPW", "KEY"), "ILOVECRIPTLY")
+        assert.equal(vigenere_decrypt("SPMFIABMNDPW", "KEY"), "ILOVECRIPTLY");
     });
 });
 
@@ -82,7 +86,7 @@ describe("Atbash", function () {
         assert.equal(atbash_encrypt("ILOVECRIPTLY"), "ROLEVXIRKGOB");
     });
     it("Decrypt", function () {
-        assert.equal(atbash_decrypt("ROLEVXIRKGOB"), "ILOVECRIPTLY")
+        assert.equal(atbash_decrypt("ROLEVXIRKGOB"), "ILOVECRIPTLY");
     });
 });
 
@@ -91,7 +95,7 @@ describe("Latin", function () {
         assert.equal(latin_encrypt("I love cryptli"), "9   12 15 22 5   3 18 25 16 20 12 9");
     });
     // it("Decrypt",function(){
-    //     assert.equal(atbash_decrypt("ROLEVXIRKGOB"), "ILOVECRIPTLY")
+    //     assert.equal(atbash_decrypt("ROLEVXIRKGOB"), "ILOVECRIPTLY");
     // });
 });
 
@@ -100,7 +104,7 @@ describe("Scytale", function () {
         assert.equal(scytale_encrypt("abcdefghijklmnopqrstuvwxyzBumBumBum", 3), "adgjmpsvyuuubehknqtwzmmmcfiloruxBBB");
     });
     it("Decrypt", function () {
-        assert.equal(scytale_decrypt("adgjmpsvyuuubehknqtwzmmmcfiloruxBBB", 3), "abcdefghijklmnopqrstuvwxyzBumBumBum")
+        assert.equal(scytale_decrypt("adgjmpsvyuuubehknqtwzmmmcfiloruxBBB", 3), "abcdefghijklmnopqrstuvwxyzBumBumBum");
     });
 });
 
@@ -109,7 +113,7 @@ describe("Rotation", function () {
         assert.equal(rotation_encrypt("ILOVECRIPTLY", 13), "VYBIRPEVCGYL");
     });
     it("Decrypt", function () {
-        assert.equal(rotation_decrypt("VYBIRPEVCGYL", 13), "ILOVECRIPTLY")
+        assert.equal(rotation_decrypt("VYBIRPEVCGYL", 13), "ILOVECRIPTLY");
     });
 });
 
@@ -118,6 +122,24 @@ describe("Reverse", function () {
         assert.equal(reverse_encrypt("ILOVECRIPTLY"), "YLTPIRCEVOLI");
     });
     it("Decrypt", function () {
-        assert.equal(reverse_decrypt("YLTPIRCEVOLI"), "ILOVECRIPTLY")
+        assert.equal(reverse_decrypt("YLTPIRCEVOLI"), "ILOVECRIPTLY");
     });
+});
+
+describe("Roman", function () {
+    it("Encrypt", function () {
+        assert.equal(roman_encrypt(3999), "MMMCMXCIX");
+    });
+    it("Decrypt", function () {
+        assert.equal(roman_decrypt("MMMCMXCIX"), 3999);
+    });
+});
+
+describe("Polybios", function () {
+    it("Encrypt", function () {
+        assert.equal(polybios_encrypt("Abgabeum10Uhr", "ILOVECRIPTLY"), "25 26 33 25 26 15 45 41 54 53 45 34 21");
+    });
+    /* it("Decrypt", function () {
+        assert.equal(polybios_decrypt("25 26 33 25 26 15 45 41 54 53 45 34 21", "ILOVECRIPTLY"), "Abgabeum10Uhr");
+    }); */
 });

@@ -19,7 +19,9 @@ import {
     rotation_encrypt,
     rotation_decrypt,
     reverse_encrypt,
-    reverse_decrypt
+    reverse_decrypt,
+    roman_encrypt,
+    roman_decrypt
 } from "./mod.ts";
 
 Deno.test("Cesar encode", () => {
@@ -125,4 +127,14 @@ Deno.test("Reverse encode", () => {
 Deno.test("Reverse decode", () => {
     const cipher = reverse_decrypt("YLTPIRCEVOLI");
     assertEquals(cipher, "ILOVECRIPTLY");
+});
+
+Deno.test("Roman encode", () => {
+    const cipher = roman_encrypt(3999);
+    assertEquals(cipher, "MMMCMXCIX");
+});
+
+Deno.test("Roman decode", () => {
+    const cipher = roman_decrypt("MMMCMXCIX");
+    assertEquals(cipher, 3999);
 });

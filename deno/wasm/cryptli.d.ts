@@ -1,15 +1,47 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-* @param {string} str
+* @param {string} plain
+* @param {string} key
 * @returns {string}
 */
-export function morse_encrypt(str: string): string;
+export function polybios_encrypt(plain: string, key: string): string;
+/**
+* @param {string} cypher
+* @param {string} key
+* @returns {string}
+*/
+export function polybios_decrypt(cypher: string, key: string): string;
 /**
 * @param {string} str
 * @returns {string}
 */
-export function morse_decrypt(str: string): string;
+export function ascii_encrypt(str: string): string;
+/**
+* @param {string} str
+* @returns {string}
+*/
+export function ascii_decrypt(str: string): string;
+/**
+* @param {string} plain
+* @param {string} key
+* @returns {string}
+*/
+export function vigenere_encrypt(plain: string, key: string): string;
+/**
+* @param {string} cipher
+* @param {string} key
+* @returns {string}
+*/
+export function vigenere_decrypt(cipher: string, key: string): string;
+/**
+* @param {string} str
+* @returns {string}
+*/
+export function latin_encrypt(str: string): string;
+/**
+*/
+export function latin_decrypt(): void;
 /**
 * @param {string} str
 * @param {number} shift_amount
@@ -27,15 +59,15 @@ export function reverse_encrypt(plain: string): string;
 */
 export function reverse_decrypt(cipher: string): string;
 /**
-* @param {string} plain
+* @param {string} str
 * @returns {string}
 */
-export function atbash_encrypt(plain: string): string;
+export function morse_encrypt(str: string): string;
 /**
-* @param {string} cipher
+* @param {string} str
 * @returns {string}
 */
-export function atbash_decrypt(cipher: string): string;
+export function morse_decrypt(str: string): string;
 /**
 * @param {string} str
 * @param {number} radix
@@ -71,6 +103,16 @@ export function rotation_encrypt(plain: string, key: number): string;
 */
 export function rotation_decrypt(cipher: string, key: number): string;
 /**
+* @param {number} plain
+* @returns {string}
+*/
+export function roman_encrypt(plain: number): string;
+/**
+* @param {string} cipher
+* @returns {number}
+*/
+export function roman_decrypt(cipher: string): number;
+/**
 * @param {string} plain
 * @param {number} height
 * @returns {string}
@@ -83,32 +125,12 @@ export function scytale_encrypt(plain: string, height: number): string;
 */
 export function scytale_decrypt(cipher: string, height: number): string;
 /**
-* @param {string} str
-* @returns {string}
-*/
-export function ascii_encrypt(str: string): string;
-/**
-* @param {string} str
-* @returns {string}
-*/
-export function ascii_decrypt(str: string): string;
-/**
 * @param {string} plain
-* @param {string} key
 * @returns {string}
 */
-export function vigenere_encrypt(plain: string, key: string): string;
+export function atbash_encrypt(plain: string): string;
 /**
 * @param {string} cipher
-* @param {string} key
 * @returns {string}
 */
-export function vigenere_decrypt(cipher: string, key: string): string;
-/**
-* @param {string} str
-* @returns {string}
-*/
-export function latin_encrypt(str: string): string;
-/**
-*/
-export function latin_decrypt(): void;
+export function atbash_decrypt(cipher: string): string;

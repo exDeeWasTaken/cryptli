@@ -19,6 +19,10 @@ exports.rotation_encrypt = wasm.rotation_encrypt;
 exports.rotation_decrypt = wasm.rotation_decrypt;
 exports.reverse_encrypt = wasm.reverse_encrypt;
 exports.reverse_decrypt = wasm.reverse_decrypt;
+exports.roman_encrypt = wasm.roman_encrypt;
+exports.roman_decrypt = wasm.roman_decrypt;
+exports.polybios_encrypt = wasm.polybios_encrypt;
+exports.polybios_decrypt = wasm.polybios_decrypt;
 
 
 

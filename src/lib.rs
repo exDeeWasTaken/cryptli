@@ -9,6 +9,8 @@ pub mod latin;
 pub mod scytale;
 pub mod rotation;
 pub mod reverse;
+pub mod roman;
+pub mod polybios;
 
 pub use cesar::*;
 pub use binary::*;
@@ -21,3 +23,5 @@ pub use latin::*;
 pub use scytale::*;
 pub use rotation::*;
 pub use reverse::*;
+pub use roman::*;
+pub use polybios::*;
