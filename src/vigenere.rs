@@ -23,7 +23,7 @@ pub mod vigenere {
             let next_charnumber = next_char % 26;
 
             //Searches to next_number correspnding char
-            cipher.push(alphabet.chars().nth(next_charnumber  as usize).unwrap());
+            cipher.push(alphabet.chars().nth(next_charnumber as usize).unwrap());
         });
 
         cipher
@@ -47,7 +47,7 @@ pub mod vigenere {
             //Gets value of chars
             let keyword_number = keyword_char as u8 - 'A' as u8;
             let ciphertext_number = ciphertext_char as u8 - 'A' as u8;
-            
+
             //get numbervalue of chars (reverse vrom encrypt)
             let next_char = ciphertext_number.to_string().parse::<i32>().unwrap() - keyword_number.to_string().parse::<i32>().unwrap();
 
@@ -55,8 +55,8 @@ pub mod vigenere {
             let next_charnumber = ((next_char % 26) + 26) % 26;
 
             //Searches to next_charnumber correspnding char
-            plain.push(alphabet.chars().nth(next_charnumber  as usize).unwrap());
-            });
+            plain.push(alphabet.chars().nth(next_charnumber as usize).unwrap());
+        });
 
         plain
     }

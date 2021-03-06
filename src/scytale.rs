@@ -16,7 +16,10 @@ pub mod scytale {
 
         // Encrypt char by char
         while cipher.len() < plain.len() {
-            if (i + c) > plain.len() - 1 { i = 0; c += 1; }
+            if (i + c) > plain.len() - 1 {
+                i = 0;
+                c += 1;
+            }
 
             cipher.push(plaintext_vec[i + c]);
 
@@ -35,9 +38,8 @@ pub mod scytale {
 
         let ofset: usize;
 
-        if cipher.len() % height == 0 { ofset = cipher.len() / height; }
-        else { ofset = cipher.len() / height + 1; }
-        
+        if cipher.len() % height == 0 { ofset = cipher.len() / height; } else { ofset = cipher.len() / height + 1; }
+
         //counter for number of wraps already done
         let mut c = 0;
 
@@ -46,7 +48,10 @@ pub mod scytale {
 
         // Decrypt char by char
         while plain.len() < cipher.len() {
-            if (i + c) > cipher.len() - 1 { i = 0; c += 1;  }
+            if (i + c) > cipher.len() - 1 {
+                i = 0;
+                c += 1;
+            }
 
             plain.push(cipher_vec[i + c]);
 

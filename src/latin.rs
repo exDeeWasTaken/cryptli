@@ -15,14 +15,13 @@ pub mod latin {
                 let num_index: u32;
                 if char.is_ascii_lowercase() {
                     num_index = ascii_index - 96;
-                }else {
+                } else {
                     num_index = ascii_index - 64;
                 }
                 cipher.push_str(&*format!("{:?}", num_index));
-            }else {
+            } else {
                 cipher.push(char);
             }
-
         }
 
         cipher

@@ -17,8 +17,7 @@ const {
     scytale_decrypt,
     rotation_encrypt,
     rotation_decrypt,
-    reverse_encrypt,
-    reverse_decrypt,
+    reverse,
     roman_encrypt,
     roman_decrypt,
     polybios_encrypt,
@@ -119,10 +118,10 @@ describe("Rotation", function () {
 
 describe("Reverse", function () {
     it("Encrypt", function () {
-        assert.equal(reverse_encrypt("ILOVECRIPTLY"), "YLTPIRCEVOLI");
+        assert.equal(reverse("ILOVECRIPTLY"), "YLTPIRCEVOLI");
     });
     it("Decrypt", function () {
-        assert.equal(reverse_decrypt("YLTPIRCEVOLI"), "ILOVECRIPTLY");
+        assert.equal(reverse("YLTPIRCEVOLI"), "ILOVECRIPTLY")
     });
 });
 

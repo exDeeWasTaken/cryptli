@@ -6,7 +6,7 @@ pub mod rotation {
     {
         if key > 26 {
             return "Only numbers between 0 and 26 allowed".to_string();
-        }else if key == 0 {
+        } else if key == 0 {
             return plain;
         }
 
@@ -21,7 +21,6 @@ pub mod rotation {
 
         // Encrypt char by char
         while cipher.len() < plain.len() {
-
             let next_char = plaintext_vec[i];
 
             //find next index of Char
@@ -45,7 +44,7 @@ pub mod rotation {
     {
         if key > 26 {
             return "Only numbers between 0 and 26 allowed".to_string();
-        }else if key == 0 {
+        } else if key == 0 {
             return cipher;
         }
 
@@ -60,7 +59,6 @@ pub mod rotation {
 
         // Encrypt char by char
         while plain.len() < cipher.len() {
-
             let next_char = cipher_vec[i];
 
             //find next index of Char

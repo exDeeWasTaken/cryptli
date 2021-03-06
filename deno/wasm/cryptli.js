@@ -548,6 +548,7 @@ const imports = {
 
 const file = new URL(import.meta.url).pathname;
 const filePath = Deno.build.os === 'windows' ? 'wasm/cryptli_bg.wasm' : 'cryptli_bg.wasm';
+const filePath = Deno.build.os === 'windows' ? 'wasm/cryptli_bg.wasm' : filePath;
 const wasmFile = file.substring(0, file.lastIndexOf(Deno.build.os === 'windows' ? '\\' : '/') + 1) + filePath;
 const wasmModule = new WebAssembly.Module(Deno.readFileSync(wasmFile));
 const wasmInstance = new WebAssembly.Instance(wasmModule, imports);

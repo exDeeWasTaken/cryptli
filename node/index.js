@@ -17,12 +17,16 @@ exports.scytale_encrypt = wasm.scytale_encrypt;
 exports.scytale_decrypt = wasm.scytale_decrypt;
 exports.rotation_encrypt = wasm.rotation_encrypt;
 exports.rotation_decrypt = wasm.rotation_decrypt;
+<<<<<<< HEAD
 exports.reverse_encrypt = wasm.reverse_encrypt;
 exports.reverse_decrypt = wasm.reverse_decrypt;
 exports.roman_encrypt = wasm.roman_encrypt;
 exports.roman_decrypt = wasm.roman_decrypt;
 exports.polybios_encrypt = wasm.polybios_encrypt;
 exports.polybios_decrypt = wasm.polybios_decrypt;
+=======
+exports.reverse = wasm.reverse;
+>>>>>>> 33bbf9d802a2ab50acb3263fdfced5c37b4a01bf
 
 
 
